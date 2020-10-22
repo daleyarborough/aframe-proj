@@ -1,24 +1,71 @@
 <!DOCTYPE html>
 <html>
-  <head>
-      <title>thedaleyjournal</title>
+<head>
+    <title>thedaleyjournal</title>
     <meta name="description" content="thedaleyjournal">
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
-  </head>
-  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/countdown/2.6.0/countdown.min.js"></script>
+
+</head>
+<body>
     <a-scene>
-      <a-entity environment="grid:dots; ground:canyon; groundColor: #121212; fog:.8; dressing:mushrooms; dressingAmount:150; skyType:atmosphere"></a-entity>
-      <a-entity geometry="primitive: torus; radius: 4.5; radiusTubular: .25; arc: 180" position="-1 0 -4" rotation="360"></a-entity>
-      
-      <a-entity
-        position="-1 3 -5" radius="0.25"
-        text="color: white; align: right; width: 5; font: monoid;
-              value: By: Dale Yarborough (daleyarborough.com)"
-      ></a-entity>
-      <a-image src="https://media-exp1.licdn.com/dms/image/C4E03AQHOJ-9A1jb8zQ/profile-displayphoto-shrink_400_400/0?e=1608768000&v=beta&t=4Nnb9r3u7WMViCCY5WB8d8gDi7FJpDSgSS3bVfd96EE" position="-2 2 -4"></a-image>
+        <a-entity environment="grid:dots; ground:canyon; groundColor: #121212; fog:.8; dressing:mushrooms; dressingAmount:150; skyType:atmosphere"></a-entity>
+        <a-entity geometry="primitive: torus; radius: 4.5; radiusTubular: .25; arc: 180" position="-1 0 -4" rotation="360"></a-entity>
+
+        <a-entity position="-1 3 -5" radius="0.25"
+                  text="color: white; align: right; width: 5; font: monoid;
+              value: By: Dale Yarborough (daleyarborough.com)"></a-entity>
+
+        <a-text id="ChangeText"
+                value=""
+                position="4 5 -5"
+                radius="0.25">
+        </a-text>
+        <a-image src="https://media-exp1.licdn.com/dms/image/C4E03AQHOJ-9A1jb8zQ/profile-displayphoto-shrink_400_400/0?e=1608768000&v=beta&t=4Nnb9r3u7WMViCCY5WB8d8gDi7FJpDSgSS3bVfd96EE" position="-2 2 -4"></a-image>
+
+        <!-- #Step 1: Load Image Dynamically -->
+        <!-- #Step 2: Load Image Dynamically -->
+        <!-- #Step 3: Load Image Dynamically -->
+        <a-curvedimage id="BidenHarris"
+                       src=""
+                       position="5 5 1"
+                       height="3"
+                       radius="5"
+                       theta-length="80">
+        </a-curvedimage>
+
+        <!-- Add image element here -->
+
+        <a-image id="Histogram"
+        src="" position="1 3 -4">
+        </a-image>
+
     </a-scene>
-    </a-scene>
-    
-  </body>
+</body>
 </html>
+
+<script>
+    var scene = document.querySelector('a-scene');
+
+    if (scene.hasLoaded) {
+        setInterval(run, 100);
+    } else {
+        scene.addEventListener('loaded', run);
+    }
+
+    function run() {
+        var textWords = document.getElementById("ChangeText");
+        console.log(textWords);
+        var daysToElection = countdown(new Date(2020, 10, 3)).toString();
+        var newText = textWords.setAttribute('value', 'Go Vote, ' + daysToElection + " Until The End Of The 2020 Election!");
+
+        var bidenHarrisLogo = document.getElementById("BidenHarris");
+        console.log(bidenHarrisLogo);
+        var newImage = bidenHarrisLogo.setAttribute('src', 'https://bloximages.chicago2.vip.townnews.com/idahostatejournal.com/content/tncms/assets/v3/editorial/b/32/b328f72b-a3d9-55ec-979a-b04e576cd62b/5f3bf9d643ae1.image.jpg?resize=630%2C630')
+        
+        var histogramImage = document.getElementById("Histogram");
+        var newGraphImage = histogramImage.setAttribute('src', 'https://histogram-ml.s3.amazonaws.com/histogram.png');
+        console.log(histogramImage);
+    }
+</script>
