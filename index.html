@@ -53,16 +53,12 @@
         </a-image>
 
         <!-- Insert Link To daleyarborough.com -->
-        <a-link id="thedaleyjournal"
+
+        <a-link href="daleyarborough.com"
                 title="thedaleyjournal"
-                position="-15 3 -6"
-                rotation="45"
-                borderColor="orange"
-                backgroundColor="#121212"
-                href=""
-                image="">
-        </a-link>
-      
+                position="-15 1 -6">
+      </a-link>
+
 
     </a-scene>
 </body>
@@ -89,10 +85,6 @@
         
         var histogramImage = document.getElementById("Histogram");
         var newGraphImage = histogramImage.setAttribute('src', 'https://histogram-ml.s3.amazonaws.com/histogram.png');
-        console.log(histogramImage);
-
-        var histogramImage = document.getElementById("thedaleyjournal");
-        var newGraphImage = histogramImage.setAttribute('href', 'https://daleyarborough.com');
         console.log(histogramImage);
     }
 </script>
