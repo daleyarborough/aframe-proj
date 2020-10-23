@@ -10,7 +10,10 @@
 </head>
 <body>
     <a-scene>
-        <a-entity environment="grid:dots; ground:canyon; groundColor: #121212; fog:.8; dressing:mushrooms; dressingAmount:150; skyType:atmosphere"></a-entity>
+        <a-entity environment="grid:dots; ground:canyon; groundColor: #121212; fog:.8; dressing:mushrooms; dressingAmount:150; skyType:atmosphere">
+
+        </a-entity>
+
         <a-entity geometry="primitive: torus; radius: 4.5; radiusTubular: .25; arc: 180" 
                   position="-1 0 -4" 
                   rotation="360">
@@ -52,12 +55,24 @@
                        theta-length="80">
         </a-image>
 
-        <!-- Insert Link To daleyarborough.com -->
+        <!-- Insert Geometric Shapes -->
+        <a-tetrahedron color="#FF926B"
+                       radius="5"
+                       position="-5 1 -17">
+        </a-tetrahedron>
 
-        <a-link href="daleyarborough.com"
-                title="thedaleyjournal"
-                position="-15 1 -6">
-      </a-link>
+        <a-torus-knot color="#33B2FF"
+                       radius="5"
+                       position="-10 5 12">
+        </a-torus-knot>
+
+        <a-cylinder color="pink" 
+                    theta-start="50" 
+                    theta-length="280" 
+                    side="double"
+                    position="-16 2 -15"
+                    rotation="250">
+        </a-cylinder>
 
 
     </a-scene>
