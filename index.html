@@ -6,13 +6,26 @@
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/countdown/2.6.0/countdown.min.js"></script>
-
 </head>
 <body>
     <a-scene>
         <a-entity environment="grid:dots; ground:canyon; groundColor: #121212; fog:.8; dressing:mushrooms; dressingAmount:150; skyType:atmosphere">
 
         </a-entity>
+
+        <!-- Left Basic box #1 -->
+        <a-box color="#71aa55" 
+               position="-7 0 -4"
+               height="4"
+               width="2">
+        </a-box>
+
+        <!-- Right Basic box -->
+        <a-box color="#121212" 
+               position="5 0 -4"
+               height="4"
+               width="2">
+        </a-box>
 
         <a-entity geometry="primitive: torus; radius: 4.5; radiusTubular: .25; arc: 180" 
                   position="-1 0 -4" 
