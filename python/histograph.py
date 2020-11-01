@@ -1,20 +1,18 @@
 import plotly.graph_objects as go
 import numpy as np
+import pandas as pd
 import os
-
 # Change Scatter Plot To Histogram
 # Then Save Graph As Image To Images Folder
 
-x0 = np.random.randn(2000)
-x1 = np.random.randn(2000) + 1
+df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/2014_apple_stock.csv')
 
-fig = go.Figure()
-fig.add_trace(go.Histogram(x=x0))
-fig.add_trace(go.Histogram(x=x1))
+fig = go.Figure(go.Scatter(x = df['AAPL_x'], y = df['AAPL_y'],
+                  name='Share Prices (in USD)'))
 
-# The two histograms are drawn on top of another
-fig.update_layout(barmode='stack')
-fig.show()
+fig.update_layout(title='Apple Share Prices over time (2014)',
+                   plot_bgcolor='rgb(230, 230,230)',
+                   showlegend=True)
 
 
 if not os.path.exists("graphs"):
