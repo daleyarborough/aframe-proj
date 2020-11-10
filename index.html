@@ -124,15 +124,15 @@
     function run() {
         var textWords = document.getElementById("ChangeText");
         console.log(textWords);
-        var daysToElection = countdown(new Date(2020, 10, 4)).toString();
-        var newText = textWords.setAttribute('value', 'Go vote, only ' + daysToElection + " until the end of the 2020 election");
+        var daysToInaugurationDay = countdown(new Date(2021, 0, 20)).toString();
+        var newText = textWords.setAttribute('value', daysToInaugurationDay + " until President Joe Biden's Inauguration Day");
 
         var bidenHarrisLogo = document.getElementById("BidenHarris");
         console.log(bidenHarrisLogo);
         var newImage = bidenHarrisLogo.setAttribute('src', 'https://bloximages.chicago2.vip.townnews.com/idahostatejournal.com/content/tncms/assets/v3/editorial/b/32/b328f72b-a3d9-55ec-979a-b04e576cd62b/5f3bf9d643ae1.image.jpg?resize=630%2C630')
         
         var histogramImage = document.getElementById("Histogram");
-        var newGraphImage = histogramImage.setAttribute('src', 'https://histogram-ml.s3.amazonaws.com/histogram.png');
+        var newGraphImage = histogramImage.setAttribute('src', 'https://histogram-ml.s3.amazonaws.com/barchart.svg');
         console.log(histogramImage);
     }
 </script>
